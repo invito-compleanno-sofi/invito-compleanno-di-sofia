@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invito 18° Compleanno | Sofia</title>
+    <meta name="description" content="Invito digitale esclusivo ed elegante per il 18° compleanno di Sofia.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Santtory Roasted & Fiolex Girls & FontAwesome Icons -->
+    <link href="https://fonts.cdnfonts.com/css/santtory-roasted" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/fiolex-girls" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=48">
+</head>
+
+<body>
+
+    <!-- Floating Stardust Particles Canvas -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Floating Settings Button (Personalizza Testi) -->
+    <button id="settingsToggleBtn" class="floating-settings-btn" title="Personalizza l'Invito"
+        aria-label="Personalizza Invito">
+        <i class="fas fa-sliders-h"></i>
+    </button>
+
+    <div class="multi-page-container">
+
+        <!-- =======================================================================
+             PAGINA 1: BUSTA CON ARCO, FIOCCO VELLUTO E FARFALLE
+             ======================================================================= -->
+        <section id="page1Envelope" class="page-view active" aria-label="Schermata Iniziale Invito">
+            <div class="arch-card" id="archCard">
+
+                <!-- Fiocco in velluto in cima all'arco -->
+                <div class="card-bow-wrapper">
+                    <img src="velvet_bow.png" alt="Fiocco di Velluto" class="card-velvet-bow">
+                </div>
+
+                <!-- Farfalle decorative -->
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-right">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-left">
+
+                <!-- Titolo in alto -->
+                <h1 class="arch-top-title" id="dynArchHeader">SEI STATO INVITATO</h1>
+
+                <!-- Busta Bordeaux Realistica con Sigillo -->
+                <div class="envelope-wrapper" id="interactiveEnvelope" onclick="triggerEnvelopeOpen()" role="button"
+                    aria-label="Tocca la busta per aprire l'invito">
+                    <div class="envelope-base"></div>
+                    <div class="envelope-left-fold"></div>
+                    <div class="envelope-right-fold"></div>
+                    <div class="envelope-bottom-fold"></div>
+
+                    <!-- Lettera interna -->
+                    <div class="envelope-letter">
+                        <span class="letter-monogram-gold dyn-monogram">S</span>
+                        <span class="letter-event-title dyn-event-type">Il Mio 18° Compleanno</span>
+                        <p style="font-family: var(--font-santtory); font-size: 1.85rem; color: #731027; margin-top: 2px; line-height: 1.1;"
+                            class="dyn-name">Sofia</p>
+                    </div>
+
+                    <!-- Patta triangolare superiore -->
+                    <div class="envelope-top-flap"></div>
+
+                    <!-- Sigillo in Ceralacca Argentato con S -->
+                    <div class="wax-seal-pearl" id="waxSeal" onclick="triggerEnvelopeOpen()">
+                        <img src="silver_seal.png?v=5" alt="Sigillo Ceralacca Argentato" class="wax-seal-img">
+                    </div>
+                </div>
+
+                <!-- Istruzione tocca -->
+                <p class="arch-footer-instruction" id="dynEnvelopeInstruction" onclick="triggerEnvelopeOpen()">
+                    Tocca sulla busta<br>per aprire l'invito
+                </p>
+
+            </div>
+        </section>
+
+        <!-- =======================================================================
+             PAGINA 2: L'ANNUNCIO DELL'INVITO & DATA
+             ======================================================================= -->
+        <section id="page2Invite" class="page-view" aria-label="Dettagli Invito Sofia">
+            <div class="luxury-page-card">
+
+                <div class="card-bow-wrapper">
+                    <img src="velvet_bow.png" alt="Fiocco di Velluto" class="card-velvet-bow">
+                </div>
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-right">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-left">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-1">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-2">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-3">
+
+                <p class="hero-name-main card-top-first" id="dynHeroSubtitle">Vi Aspetto Con Gioia</p>
+                <h2 class="hero-name-santtory dyn-name">Sofia</h2>
+
+                <div class="hero-event-tag dyn-event-type">Il Mio 18° Compleanno</div>
+
+                <div class="ornate-divider">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <i class="fas fa-crown fleuron"></i>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+
+                <p class="hero-presentation-quote" id="dynHeroQuote">
+                    Un giorno speciale merita di essere condiviso con le persone che rendono la vita ancora più bella.
+                    I miei 18 anni sono un’occasione unica, un ricordo che desidero portare per sempre nel cuore.
+                    Vi aspetto per festeggiare insieme una serata piena di emozioni e felicità, che porterò per sempre
+                    tra i ricordi più belli della mia vita.
+                </p>
+
+                <!-- Data & Ora -->
+                <div class="date-pill-container">
+                    <div class="date-pill">
+                        <i class="fas fa-calendar-day"></i>
+                        <span id="dynDateDisplay">Martedì 29 Dicembre 2026</span>
+                    </div>
+                    <div class="date-pill">
+                        <i class="fas fa-clock"></i>
+                        <span id="dynTimeDisplay">Ore 20:30</span>
+                    </div>
+                </div>
+
+                <!-- 3 Pulsanti di Navigazione Rapida -->
+                <div class="nav-three-buttons">
+                    <button id="btnToLocation" class="nav-mini-btn" title="Scopri la Location">
+                        <img src="location_icon_gold.png" alt="Location" class="nav-mini-icon-img">
+                        <span>Location</span>
+                    </button>
+                    <button id="btnToDressCode" class="nav-mini-btn" title="Consulta il Dress Code">
+                        <img src="dress_code_gold.png" alt="Dress Code" class="nav-mini-img-icon">
+                        <span>Dress Code</span>
+                    </button>
+                    <button id="btnToRsvp" class="nav-mini-btn" title="Conferma la Presenza">
+                        <img src="whatsapp_icon_gold.png" alt="Conferma" class="nav-mini-icon-img">
+                        <span>Conferma</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================================================================
+             PAGINA 3: LOCATION
+             ======================================================================= -->
+        <section id="page3Location" class="page-view" aria-label="Location e Google Maps">
+            <div class="luxury-page-card">
+
+                <div class="card-bow-wrapper">
+                    <img src="velvet_bow.png" alt="Fiocco di Velluto" class="card-velvet-bow">
+                </div>
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-right">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-left">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-1">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-2">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-3">
+
+                <div class="location-pin-icon">
+                    <img src="location_icon_gold.png" alt="Location Pin">
+                </div>
+
+                <p
+                    style="font-size: 0.68rem; letter-spacing: 1.8px; text-transform: uppercase; color: #731027; font-weight: 700; margin-bottom: 2px;">
+                    Dove Festeggeremo
+                </p>
+
+                <h2>
+                    <a id="dynLocationNameLink" href="https://maps.app.goo.gl/pUup5wyynbFS5DEdA?g_st=iw" target="_blank"
+                        rel="noopener noreferrer" class="location-name">
+                        <span id="dynLocationName">Casa Resta</span>
+                    </a>
+                </h2>
+
+                <p class="location-address" id="dynLocationAddress">
+                    Superstrada Taranto/Brindisi, SS7, 72021 Francavilla Fontana (BR)
+                </p>
+
+                <p class="location-description" id="dynLocationDescription">
+                    Una splendida ed elegante dimora storica, cornice esclusiva e raffinata per brindare e festeggiare
+                    insieme sotto le stelle.
+                </p>
+
+                <!-- Mappa Google Maps Integrata -->
+                <div class="map-embed-wrapper">
+                    <iframe id="googleMapsIframe" title="Mappa della location"
+                        src="https://maps.google.com/maps?q=Casa+Resta,+Superstrada+Taranto/Brindisi,+SS7,+72021+Francavilla+Fontana+BR&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Pulsante Google Maps Diretto -->
+                <a id="googleMapsLinkBtn" class="nav-action-btn"
+                    href="https://maps.app.goo.gl/pUup5wyynbFS5DEdA?g_st=iw" target="_blank" rel="noopener noreferrer"
+                    style="margin-top: 0; margin-bottom: 8px; background: linear-gradient(135deg, #1f6feb 0%, #114fb0 100%); color: #fff;">
+                    <i class="fas fa-directions"></i> Apri su Google Maps & Naviga
+                </a>
+
+                <!-- Tasto Torna all'Invito -->
+                <button class="nav-action-btn btn-back-to-invite">
+                    <i class="fas fa-arrow-left"></i> Torna all'Invito
+                </button>
+            </div>
+        </section>
+
+        <!-- =======================================================================
+             PAGINA 4: DRESS CODE
+             ======================================================================= -->
+        <section id="page4DressCode" class="page-view" aria-label="Dress Code">
+            <div class="luxury-page-card">
+
+                <div class="card-bow-wrapper">
+                    <img src="velvet_bow.png" alt="Fiocco di Velluto" class="card-velvet-bow">
+                </div>
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-right">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-left">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-1">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-2">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-3">
+
+                <div class="dress-code-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+
+                <p
+                    style="font-size: 0.68rem; letter-spacing: 1.8px; text-transform: uppercase; color: #731027; font-weight: 700; margin-bottom: 2px;">
+                    Stile & Eleganza
+                </p>
+
+                <h1 class="hero-name-main" style="font-size: 1.85rem; margin-bottom: 8px;" id="dynDressCodeTitle">
+                    Dress Code
+                </h1>
+
+
+
+                <div class="color-palette-title">
+                    <h3 class="hero-name-main"> MASSIMA ELEGANZA</h3>
+                </div>
+
+
+                <!-- Tasti di navigazione -->
+                <button class="nav-action-btn btn-back-to-invite">
+                    <i class="fas fa-arrow-left"></i> Torna all'Invito
+                </button>
+                <button id="btnDressCodeToRsvp" class="btn-secondary"
+                    style="margin-top: 8px; width: 100%; max-width: 260px;">
+                    <i class="fab fa-whatsapp"></i> Vai alla Conferma <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- =======================================================================
+             PAGINA 5: CONFERMA DELLA PRESENZA (RSVP)
+             ======================================================================= -->
+        <section id="page5Rsvp" class="page-view" aria-label="Conferma Presenza RSVP">
+            <div class="luxury-page-card">
+
+                <div class="card-bow-wrapper">
+                    <img src="velvet_bow.png" alt="Fiocco di Velluto" class="card-velvet-bow">
+                </div>
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-right">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-top-left">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-1">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-2">
+                <img src="butterfly.png" alt="Farfalla" class="card-butterfly butterfly-bottom-3">
+
+                <p class="card-top-subtitle">
+                    La Tua Presenza
+                </p>
+
+                <div class="ornate-divider">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <i class="fas fa-star fleuron"></i>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+
+                <p style="color: #000000; font-size: 0.82rem; margin-bottom: 8px; line-height: 1.42; max-width: 290px;">
+                    Conferma la tua presenza compilando il modulo qui sotto. Sarà bello festeggiare insieme questo giorno speciale!
+                </p>
+
+                <!-- Modulo Conferma RSVP Interattivo -->
+                <form id="rsvpForm" class="rsvp-form-container" onsubmit="event.preventDefault(); submitRsvpToExcel();">
+
+                    <!-- Caselle Nome e Cognome -->
+                    <div class="rsvp-row-2col">
+                        <input type="text" id="rsvpNome" class="rsvp-input" placeholder="Nome *" required
+                            autocomplete="given-name">
+                        <input type="text" id="rsvpCognome" class="rsvp-input" placeholder="Cognome *" required
+                            autocomplete="family-name">
+                    </div>
+
+                    <!-- Spunta Partecipazione (Partecipo / Non posso) -->
+                    <div class="rsvp-attendance-selector">
+                        <label class="attendance-option">
+                            <input type="radio" name="rsvpAttendance" value="yes" checked
+                                onchange="handleAttendanceChange()">
+                            <span class="attendance-card">
+                                <i class="fas fa-check-circle" style="color: #128C7E;"></i> Partecipo!
+                            </span>
+                        </label>
+                        <label class="attendance-option">
+                            <input type="radio" name="rsvpAttendance" value="no" onchange="handleAttendanceChange()">
+                            <span class="attendance-card">
+                                <i class="fas fa-times-circle" style="color: #a83232;"></i> Non potrò
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Spunta Intolleranze / Allergie e Campo di Specifica -->
+                    <div class="rsvp-intolerance-box" id="rsvpIntoleranceBox">
+                        <label class="intolerance-checkbox-label">
+                            <input type="checkbox" id="rsvpHasIntolerance" onchange="toggleIntoleranceField()">
+                            <span>Ho intolleranze alimentari o allergie</span>
+                        </label>
+                        <div id="rsvpIntoleranceDetailWrapper" class="intolerance-detail-wrapper"
+                            style="display: none;">
+                            <input type="text" id="rsvpIntolleranze" class="rsvp-input"
+                                placeholder="Specifica quali (es. celiachia, lattosio...)">
+                        </div>
+                    </div>
+
+                    <!-- Avviso validazione campi obbligatori -->
+                    <div id="rsvpFormFeedback" class="rsvp-feedback-msg" style="display: none;"></div>
+
+                    <!-- Pulsante Conferma Presenza (Registra su Excel) -->
+                    <button type="submit" id="rsvpSubmitBtn" class="rsvp-submit-btn">
+                        <i class="fas fa-check-circle"></i>
+                        Invia Conferma
+                    </button>
+                </form>
+
+                <!-- Box Conferma Avvenuta con Successo -->
+                <div id="rsvpSuccessBox" class="rsvp-success-box" style="display: none;">
+                    <div class="rsvp-success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h4 class="rsvp-success-title" id="rsvpSuccessTitle">Grazie mille!</h4>
+                    <p class="rsvp-success-desc" id="rsvpSuccessDesc">Non vedo l'ora di festeggiare con te! 🥂🩷</p>
+                </div>
+                <p class="rsvp-deadline" id="dynRsvpDeadline">
+                    <b>SI PREGA DI DARE GENTILE CONFERMA ENTRO IL 25 NOVEMBRE 2026.</b>
+                </p>
+
+                <!-- Frase Finale e Monogramma -->
+                <p class="closing-quote" id="dynClosingQuote">
+                    La tua presenza renderà questa serata davvero magica e indimenticabile. Non vedo l'ora di
+                    festeggiare con te!
+                </p>
+
+                <p style="font-family: var(--font-script); font-size: 1.75rem; color: #731027; margin-top: 4px; margin-bottom: 10px;"
+                    class="dyn-name">Sofia</p>
+
+                <!-- Tasti Navigazione -->
+                <button class="nav-action-btn btn-back-to-invite">
+                    <i class="fas fa-arrow-left"></i> Torna all'Invito
+                </button>
+                <button id="btnBackToStart" class="btn-secondary" style="margin-top: 6px;">
+                    <i class="fas fa-redo"></i> Riapri la Busta Iniziale
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <!-- Envelope Opening Fallback -->
+    <script>
+        function triggerEnvelopeOpen(e) {
+            if (window.triggerOpen) {
+                window.triggerOpen(e);
+                return;
+            }
+            const env = document.getElementById("interactiveEnvelope");
+            if (env) env.classList.add("opened");
+            const instr = document.getElementById("dynEnvelopeInstruction");
+            if (instr) instr.innerHTML = "Apertura invito in corso...";
+            setTimeout(function () {
+                const p1 = document.getElementById("page1Envelope");
+                const p2 = document.getElementById("page2Invite");
+                if (p1) p1.classList.remove("active");
+                if (p2) p2.classList.add("active");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 1600);
+        }
+    </script>
+
+    <!-- Core Logic -->
+    <script src="app.js?v=34"></script>
+</body>
+
+</html>

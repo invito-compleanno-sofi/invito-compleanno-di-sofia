@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=51">
+    <link rel="stylesheet" href="styles.css?v=52">
 </head>
 
 <body>
@@ -74,8 +74,9 @@
                     <div class="envelope-top-flap"></div>
 
                     <!-- Sigillo Monogramma SN -->
-                    <div class="wax-seal-pearl" id="waxSeal" onclick="triggerEnvelopeOpen()">
-                        <img src="silver_seal.png?v=6" alt="Sigillo Monogramma SN" class="wax-seal-img">
+                    <div class="wax-seal-pearl" id="waxSeal" onclick="triggerEnvelopeOpen()"
+                        style="top: 52px; width: 58px; height: 76px; filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 8px rgba(226, 232, 240, 0.35));">
+                        <img src="sigillo_sn.png?v=3" alt="Sigillo Monogramma SN Argentato" class="wax-seal-img">
                     </div>
                 </div>
 
@@ -121,7 +122,9 @@
                     Vi aspetto per festeggiare insieme una serata piena di emozioni e felicità, che porterò per sempre
                     tra i ricordi più belli della mia vita.
                 </p>
-                <h2 class="hero-name-santtory dyn-name">Sofia</h2>
+                <h2 class="hero-name-santtory dyn-name"
+                    style="font-size: 2.35rem; width: 100%; max-width: 270px; text-align: right; padding-right: 8px; margin: -2px auto 6px; transform: rotate(-2deg);">
+                    Sofia</h2>
                 <!-- Data & Ora -->
                 <div class="date-pill-container">
                     <div class="date-pill">
@@ -398,7 +401,26 @@
     </script>
 
     <!-- Core Logic -->
-    <script src="app.js?v=37"></script>
+    <script src="app.js?v=99"></script>
+    <script>
+        (function () {
+            function applyLatestUpdates() {
+                try {
+                    localStorage.removeItem("sofia_18_multipage_config");
+                } catch (e) { }
+                document.querySelectorAll(".dyn-event-type").forEach(function (el) {
+                    el.textContent = "Al Mio 18° Compleanno";
+                });
+                var rsvpEl = document.getElementById("dynRsvpDeadline");
+                if (rsvpEl) {
+                    rsvpEl.innerHTML = "<b>SI PREGA DI DARE GENTILE CONFERMA ENTRO IL 20 NOVEMBRE 2026.</b>";
+                }
+            }
+            applyLatestUpdates();
+            document.addEventListener("DOMContentLoaded", applyLatestUpdates);
+            window.addEventListener("load", applyLatestUpdates);
+        })();
+    </script>
 </body>
 
 </html>

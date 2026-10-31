@@ -7,7 +7,7 @@
 const DEFAULT_CONFIG = {
   celebrantName: "Sofia",
   monogram: "S",
-  eventType: "Il Mio 18° Compleanno",
+  eventType: "Al Mio 18° Compleanno",
   archHeader: "SEI STATO INVITATO",
   envelopeInstruction: "Tocca sulla busta<br>per aprire l'invito",
   heroSubtitle: "Vi Aspetto Con Gioia",
@@ -21,7 +21,7 @@ const DEFAULT_CONFIG = {
   mapsUrl: "https://maps.app.goo.gl/pUup5wyynbFS5DEdA?g_st=iw",
   dressCodeTitle: "Dress Code",
   dressCodeText: "È gradito un abbigliamento elegante e raffinato. Per chi desidera, un tocco di colore in armonia con la nostra palette (Bordeaux, Oro, Nero o Argento).",
-  rsvpDeadline: "SI PREGA DI DARE GENTILE CONFERMA ENTRO IL 25 NOVEMBRE 2026.",
+  rsvpDeadline: "SI PREGA DI DARE GENTILE CONFERMA ENTRO IL 20 NOVEMBRE 2026.",
   googleSheetUrl: "https://script.google.com/macros/s/AKfycbzB3ERwQKiDwcZEijCt7UWPaeF3PKwRSp4RBkeVf3KOotTNBDbnGkc4rgY1eFbSJJFi/exec",
   whatsappNumber: "393401234567",
   closingQuote: "La tua presenza renderà questa serata davvero magica e indimenticabile. Non vedo l'ora di festeggiare con te!"
@@ -55,8 +55,11 @@ function loadConfig() {
       if (!appConfig.heroQuote || appConfig.heroQuote.includes("I miei primi 18 anni")) {
         appConfig.heroQuote = DEFAULT_CONFIG.heroQuote;
       }
-      if (!appConfig.rsvpDeadline || !appConfig.rsvpDeadline.startsWith("SI PREGA")) {
+      if (!appConfig.rsvpDeadline || !appConfig.rsvpDeadline.startsWith("SI PREGA") || appConfig.rsvpDeadline.includes("25 NOVEMBRE")) {
         appConfig.rsvpDeadline = DEFAULT_CONFIG.rsvpDeadline;
+      }
+      if (!appConfig.eventType || appConfig.eventType === "Il Mio 18° Compleanno") {
+        appConfig.eventType = DEFAULT_CONFIG.eventType;
       }
     } else {
       appConfig = { ...DEFAULT_CONFIG };

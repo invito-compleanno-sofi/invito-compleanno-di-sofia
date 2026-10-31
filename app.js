@@ -33,37 +33,8 @@ function loadConfig() {
   try {
     localStorage.removeItem("luxury_invitation_config");
     localStorage.removeItem("sofia_18_invitation_config");
-
-    const saved = localStorage.getItem("sofia_18_multipage_config");
-    if (saved) {
-      appConfig = { ...DEFAULT_CONFIG, ...JSON.parse(saved) };
-      // Aggiorna URL Google Sheet
-      appConfig.googleSheetUrl = DEFAULT_CONFIG.googleSheetUrl;
-      // Migrazione automatica se erano presenti data o location di prova precedenti
-      if (!appConfig.eventDateDisplay || appConfig.eventDateDisplay.includes("Giugno") || appConfig.eventDateDisplay === "Sabato 24 Giugno 2026") {
-        appConfig.eventDateString = DEFAULT_CONFIG.eventDateString;
-        appConfig.eventDateDisplay = DEFAULT_CONFIG.eventDateDisplay;
-        appConfig.eventTimeDisplay = DEFAULT_CONFIG.eventTimeDisplay;
-        appConfig.rsvpDeadline = DEFAULT_CONFIG.rsvpDeadline;
-      }
-      if (appConfig.locationName === "Villa Rosa Ricevimenti") {
-        appConfig.locationName = DEFAULT_CONFIG.locationName;
-        appConfig.locationAddress = DEFAULT_CONFIG.locationAddress;
-        appConfig.locationDescription = DEFAULT_CONFIG.locationDescription;
-        appConfig.mapsUrl = DEFAULT_CONFIG.mapsUrl;
-      }
-      if (!appConfig.heroQuote || appConfig.heroQuote.includes("I miei primi 18 anni")) {
-        appConfig.heroQuote = DEFAULT_CONFIG.heroQuote;
-      }
-      if (!appConfig.rsvpDeadline || !appConfig.rsvpDeadline.startsWith("SI PREGA") || appConfig.rsvpDeadline.includes("25 NOVEMBRE")) {
-        appConfig.rsvpDeadline = DEFAULT_CONFIG.rsvpDeadline;
-      }
-      if (!appConfig.eventType || appConfig.eventType === "Il Mio 18° Compleanno") {
-        appConfig.eventType = DEFAULT_CONFIG.eventType;
-      }
-    } else {
-      appConfig = { ...DEFAULT_CONFIG };
-    }
+    localStorage.removeItem("sofia_18_multipage_config");
+    appConfig = { ...DEFAULT_CONFIG };
   } catch (e) {
     appConfig = { ...DEFAULT_CONFIG };
   }

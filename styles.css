@@ -473,17 +473,17 @@ body {
 
 .wax-seal-pearl {
   position: absolute;
-  top: 60px;
+  top: 34px;
   left: 50%;
   transform: translateX(-50%);
-  width: 68px;
-  height: 68px;
+  width: 82px;
+  height: 112px;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 10px rgba(226, 232, 240, 0.35));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
   transition: transform 0.6s ease, opacity 0.6s ease;
   animation: sealPulse 2.8s infinite;
 }

@@ -603,14 +603,18 @@ body {
 
 .hero-name-santtory {
   font-family: var(--font-santtory);
-  font-size: 3.2rem;
+  font-size: 2.35rem;
   font-weight: 400;
   color: var(--bordeaux-accent);
-  margin-top: -6px;
-  margin-bottom: 2px;
+  width: 100%;
+  max-width: 270px;
+  text-align: right;
+  padding-right: 8px;
+  margin: -2px auto 6px;
   line-height: 1.1;
   letter-spacing: 0.5px;
   text-transform: none;
+  transform: rotate(-2deg);
   position: relative;
   z-index: 5;
   display: block;
